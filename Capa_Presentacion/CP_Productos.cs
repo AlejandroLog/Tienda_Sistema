@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,7 +45,6 @@ namespace Capa_Presentacion
             {
                 try
                 {
-                    // Verificar que no estén vacíos los campos obligatorios
                     if (string.IsNullOrEmpty(txt_Nombre_Producto.Text) ||
                         string.IsNullOrEmpty(txt_Descripcion_Producto.Text) ||
                         string.IsNullOrEmpty(txt_Precio_Producto.Text) ||
@@ -55,23 +55,21 @@ namespace Capa_Presentacion
                         return;
                     }
 
-                    // Convertir el valor de precio a decimal y verificar que sea positivo
-                    decimal precio;
-                    if (!decimal.TryParse(txt_Precio_Producto.Text, out precio) || precio <= 0)
+                    CultureInfo culture = CultureInfo.InvariantCulture;
+                    decimal precio, costo;
+
+                    if (!decimal.TryParse(txt_Precio_Producto.Text.Replace(',', '.'), NumberStyles.AllowDecimalPoint, culture, out precio) || precio <= 0)
                     {
                         MessageBox.Show("Ingrese un valor numérico válido y positivo para el precio.");
                         return;
                     }
 
-                    // Convertir el valor de costo a decimal y verificar que sea positivo
-                    decimal costo;
-                    if (!decimal.TryParse(txt_Costo_Producto.Text, out costo) || costo <= 0)
+                    if (!decimal.TryParse(txt_Costo_Producto.Text.Replace(',', '.'), NumberStyles.AllowDecimalPoint, culture, out costo) || costo <= 0)
                     {
                         MessageBox.Show("Ingrese un valor numérico válido y positivo para el costo.");
                         return;
                     }
 
-                    // Llamada al método pasando los parámetros correctos
                     productos.Add_Producto(
                         txt_Nombre_Producto.Text,
                         txt_Descripcion_Producto.Text,
@@ -90,12 +88,10 @@ namespace Capa_Presentacion
                     MessageBox.Show("No se pudo agregar el Producto: " + ex.Message);
                 }
             }
-
-            if (Update == true)
+            else
             {
                 try
                 {
-                    // Verificar que ninguno de los campos obligatorios esté vacío
                     if (string.IsNullOrEmpty(txt_Nombre_Producto.Text) ||
                         string.IsNullOrEmpty(txt_Descripcion_Producto.Text) ||
                         string.IsNullOrEmpty(txt_Precio_Producto.Text) ||
@@ -106,23 +102,21 @@ namespace Capa_Presentacion
                         return;
                     }
 
-                    // Convertir el valor de precio a decimal y verificar que sea positivo
-                    decimal precio;
-                    if (!decimal.TryParse(txt_Precio_Producto.Text, out precio) || precio <= 0)
+                    CultureInfo culture = CultureInfo.InvariantCulture;
+                    decimal precio, costo;
+
+                    if (!decimal.TryParse(txt_Precio_Producto.Text.Replace(',', '.'), NumberStyles.AllowDecimalPoint, culture, out precio) || precio <= 0)
                     {
                         MessageBox.Show("Ingrese un valor numérico válido y positivo para el precio.");
                         return;
                     }
 
-                    // Convertir el valor de costo a decimal y verificar que sea positivo
-                    decimal costo;
-                    if (!decimal.TryParse(txt_Costo_Producto.Text, out costo) || costo <= 0)
+                    if (!decimal.TryParse(txt_Costo_Producto.Text.Replace(',', '.'), NumberStyles.AllowDecimalPoint, culture, out costo) || costo <= 0)
                     {
                         MessageBox.Show("Ingrese un valor numérico válido y positivo para el costo.");
                         return;
                     }
 
-                    // Llamada al método para actualizar el producto, pasando los valores convertidos
                     productos.Update_Producto(
                         txt_Nombre_Producto.Text,
                         txt_Descripcion_Producto.Text,

@@ -45,6 +45,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.combo_Producto = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Proveedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +94,7 @@
             // 
             // txt_Id_Producto_Proveedor
             // 
-            this.txt_Id_Producto_Proveedor.Location = new System.Drawing.Point(632, 297);
+            this.txt_Id_Producto_Proveedor.Location = new System.Drawing.Point(635, 297);
             this.txt_Id_Producto_Proveedor.Name = "txt_Id_Producto_Proveedor";
             this.txt_Id_Producto_Proveedor.Size = new System.Drawing.Size(100, 20);
             this.txt_Id_Producto_Proveedor.TabIndex = 6;
@@ -168,11 +169,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(670, 178);
+            this.label4.Location = new System.Drawing.Point(638, 181);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(97, 13);
             this.label4.TabIndex = 14;
-            this.label4.Text = "Telefono";
+            this.label4.Text = "Telefono 10 digitos";
             // 
             // label5
             // 
@@ -192,11 +193,20 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Id_Producto";
             // 
+            // combo_Producto
+            // 
+            this.combo_Producto.FormattingEnabled = true;
+            this.combo_Producto.Location = new System.Drawing.Point(635, 297);
+            this.combo_Producto.Name = "combo_Producto";
+            this.combo_Producto.Size = new System.Drawing.Size(121, 21);
+            this.combo_Producto.TabIndex = 17;
+            // 
             // CP_Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.combo_Producto);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -241,5 +251,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox combo_Producto;
     }
 }

@@ -25,7 +25,7 @@ namespace Capa_Datoss
             conection.CerrarConexion();
             return tabla;
         }
-
+        //agregar provedores sp
         public void Add_Proveedor(string nombre, string apellido, string empresa, string telefono, string domicilio, Boolean status, int Id_Producto)
         {
             comando.Connection = conection.AbrirConexion();
@@ -46,7 +46,7 @@ namespace Capa_Datoss
 
       
 
-
+        //actualizar proveedores sp
         public void Update_Proveedor(string nombre, string apellido, string empresa, string telefono, string domicilio, Boolean status, int Id_Producto, int Id_Proveedor)
         {
             comando.Connection = conection.AbrirConexion();
@@ -66,7 +66,7 @@ namespace Capa_Datoss
         }
 
 
-
+        //eliminar proveedores sp
         public void Delete_Proveedor(Boolean status, int Id_Proveedor)
         {
             comando.Connection = conection.AbrirConexion();

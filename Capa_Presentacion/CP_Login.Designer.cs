@@ -66,7 +66,7 @@
             // checkBoxPassword
             // 
             this.checkBoxPassword.AutoSize = true;
-            this.checkBoxPassword.Location = new System.Drawing.Point(-1, 2);
+            this.checkBoxPassword.Location = new System.Drawing.Point(411, 177);
             this.checkBoxPassword.Name = "checkBoxPassword";
             this.checkBoxPassword.Size = new System.Drawing.Size(98, 17);
             this.checkBoxPassword.TabIndex = 4;

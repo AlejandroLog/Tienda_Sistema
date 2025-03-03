@@ -14,13 +14,14 @@ namespace Capa_Presentacion
     public partial class CP_Empleados : Form
     {
         CN_Empleados empleados = new CN_Empleados();
+        CN_Usuarios usuario = new CN_Usuarios();
         private int ID_Empleado = 0;
         private bool Update = false;
         public CP_Empleados()
         {
             InitializeComponent();
             this.Load += new System.EventHandler(this.CP_Empleados_Load);
-
+            Llenar_Combo();
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -39,6 +40,12 @@ namespace Capa_Presentacion
             dGV_Empleados.DataSource = empleado.MostrarEmpleados();
         }
 
+        private void Llenar_Combo()
+        {
+            combo_Usuario.DataSource = usuario.MostrarUsuarios();
+            combo_Usuario.DisplayMember = "usuario";
+            combo_Usuario.ValueMember = "Id_Usuarios";
+                }
         private void btn_Agregar_Empleado_Click(object sender, EventArgs e)
         {
             if (Update == false)
@@ -74,11 +81,7 @@ namespace Capa_Presentacion
                         return;
                     }
 
-                    if (!int.TryParse(txt_Id_Usuario.Text, out int idUsuario))
-                    {
-                        MessageBox.Show("El ID de usuario debe ser un número válido.");
-                        return;
-                    }
+                    int idUsuario = Convert.ToInt32(combo_Usuario.SelectedValue);
 
                     // Validar Teléfono (solo 10 dígitos numéricos)
                     if (txt_Telefono.Text.Length != 10 || !txt_Telefono.Text.All(char.IsDigit))
@@ -156,6 +159,8 @@ namespace Capa_Presentacion
                         return;
                     }
 
+                    int idUsuario = Convert.ToInt32(combo_Usuario.SelectedValue);
+
                     // Llamada al procedimiento para actualizar empleado
                     empleados.Update_Empleado(
                         txt_Nombre.Text,
@@ -167,7 +172,7 @@ namespace Capa_Presentacion
                         txt_Seguro_Social.Text,
                         true,
                         ID_Empleado,
-                        Convert.ToInt32(txt_Id_Usuario.Text)
+                        idUsuario
                     );
 
                     MessageBox.Show("El Empleado se actualizó correctamente.");
@@ -196,7 +201,6 @@ namespace Capa_Presentacion
                 txt_Domicilio.Text = dGV_Empleados.CurrentRow.Cells["domicilio"].Value.ToString();
                 txt_Rfc.Text = dGV_Empleados.CurrentRow.Cells["rfc"].Value.ToString();
                 txt_Seguro_Social.Text = dGV_Empleados.CurrentRow.Cells["seguro_Social"].Value.ToString();
-                txt_Id_Usuario.Text = dGV_Empleados.CurrentRow.Cells["Id_Usuario"].Value.ToString();
 
 
                 // Asigna el ID del empleado para la actualización
@@ -248,16 +252,6 @@ namespace Capa_Presentacion
             this.Close();
         }
 
-        private void btn_Exit_Empleados_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            // Abrir la ventana principal (cambia CP_Usuarios por el formulario que quieras abrir)
-            CP_Menu formularioPrincipal = new CP_Menu();
-            formularioPrincipal.ShowDialog();
-
-            // Cerrar la ventana de login cuando se cierre la principal
-            this.Close();
-        }
+        
     }
 }

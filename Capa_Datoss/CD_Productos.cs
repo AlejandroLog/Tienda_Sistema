@@ -29,7 +29,7 @@ namespace Capa_Datoss
         }
 
 
-
+        //agregar producto sp
         public void Add_Producto(string nombre, string descripcion, SqlMoney precio, SqlMoney costo, string categoria, Boolean status)
         {
             comando.Connection = conection.AbrirConexion();
@@ -47,7 +47,7 @@ namespace Capa_Datoss
             conection.CerrarConexion();
         }
 
-
+        //actualizar producto sp
         public void Update_Producto(string nombre, string descripcion, SqlMoney precio, SqlMoney costo, string categoria, Boolean status, int Id_Producto)
         {
             comando.Connection = conection.AbrirConexion();
@@ -66,6 +66,7 @@ namespace Capa_Datoss
             conection.CerrarConexion();
         }
 
+        //eliminar producto sp
         public void Delete_Producto(Boolean status, int Id_Producto)
         {
             comando.Connection = conection.AbrirConexion();

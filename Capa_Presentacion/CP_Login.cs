@@ -11,8 +11,7 @@ namespace Capa_Presentacion
         public CP_Login()
         {
             InitializeComponent();
-            // Asegúrate de ocultar la contraseña al iniciar
-            txt_Password_Login.UseSystemPasswordChar = true;
+            txt_Password_Login.PasswordChar = '*';
         }
 
         private void txt_Usuario_Login_TextChanged(object sender, EventArgs e)
@@ -27,11 +26,14 @@ namespace Capa_Presentacion
             if (usuarios.ValidarUsuario(usuario, password))
             {
                 MessageBox.Show("¡Login exitoso!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 // Ocultar la ventana de login
                 this.Hide();
+
                 // Abrir la ventana principal
                 CP_Menu formularioPrincipal = new CP_Menu();
                 formularioPrincipal.ShowDialog();
+
                 // Cerrar la ventana de login cuando se cierre la principal
                 this.Close();
             }
@@ -46,15 +48,20 @@ namespace Capa_Presentacion
         }
 
         // Evento para el CheckBox que muestra/oculta la contraseña
-        private void checkBoxPassword_CheckedChanged(object sender, EventArgs e)
-        {
-            // Si el checkBox está marcado, se muestra la contraseña; de lo contrario se oculta.
-            txt_Password_Login.UseSystemPasswordChar = !checkBoxPassword.Checked;
-        }
-
         private void checkBoxPassword_CheckedChanged_1(object sender, EventArgs e)
         {
-            txt_Password_Login.PasswordChar = checkBoxPassword.Checked ? '\0' : '*';
+            if (checkBoxPassword.Checked)
+            {
+                txt_Password_Login.PasswordChar = '\0';
+            }
+            else
+            {
+                txt_Password_Login.PasswordChar = '*';
+            }
+        }
+
+        private void checkBoxPassword_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
 

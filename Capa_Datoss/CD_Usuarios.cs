@@ -26,7 +26,7 @@ namespace Capa_Datos
             return tabla;
         }
 
-
+        //agregar usuarios sp
         public void Add_Usuario(string usuario, string password, Boolean status)
         {
             comando.Connection = conection.AbrirConexion();
@@ -40,6 +40,7 @@ namespace Capa_Datos
             conection.CerrarConexion();
         }
 
+        //actualizar usuario sp
         public void Update_Usuario(string usuario, string password, Boolean status, int Id_Usuario)
         {
             comando.Connection = conection.AbrirConexion();
@@ -54,7 +55,7 @@ namespace Capa_Datos
             conection.CerrarConexion();
         }
 
-
+        //eliminar usuario sp
         public void Delete_Usuario(Boolean status, int Id_Usuario)
         {
             comando.Connection = conection.AbrirConexion();
@@ -67,6 +68,7 @@ namespace Capa_Datos
             conection.CerrarConexion();
         }
 
+        //validar usuario sp
         public bool ValidarUsuario(string usuario, string password)
         {
             comando.Connection = conection.AbrirConexion();

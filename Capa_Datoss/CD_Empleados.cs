@@ -14,6 +14,7 @@ namespace Capa_Datoss
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
+        //mostrar empleados en tabla
         public DataTable MostrarEmpleados()
         {
             comando.Connection = conection.AbrirConexion();
@@ -24,7 +25,7 @@ namespace Capa_Datoss
             conection.CerrarConexion();
             return tabla;
         }
-
+        //agregar empleados sp
         public void Add_Empleado(string nombre, string apellido, DateTime fechaIngreso, string telefono, string domicilio, string rfc, string seguro_Social, Boolean status, int Id_Usuario)
         {
             comando.Connection = conection.AbrirConexion();
@@ -45,7 +46,7 @@ namespace Capa_Datoss
             conection.CerrarConexion();
         }
 
-
+        //actualizar emmpleados sp
         public void Update_Empleado(string nombre, string apellido, DateTime fechaIngreso, string telefono,
                             string domicilio, string rfc, string seguro_Social, Boolean status, int Id_Empleado, int Id_Usuario)
         { 
@@ -66,7 +67,7 @@ namespace Capa_Datoss
             comando.Parameters.Clear();
             conection.CerrarConexion();
         }
-
+        //eliminar empleado sp
         public void Delete_Empleado(Boolean status, int Id_Empleado)
         {
             comando.Connection = conection.AbrirConexion();

@@ -49,15 +49,16 @@
             this.txt_Id_Usuario = new System.Windows.Forms.TextBox();
             this.btn_Exit_Empleados = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.combo_Usuario = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Empleados)).BeginInit();
             this.SuspendLayout();
             // 
             // dGV_Empleados
             // 
             this.dGV_Empleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_Empleados.Location = new System.Drawing.Point(59, 51);
+            this.dGV_Empleados.Location = new System.Drawing.Point(12, 51);
             this.dGV_Empleados.Name = "dGV_Empleados";
-            this.dGV_Empleados.Size = new System.Drawing.Size(591, 301);
+            this.dGV_Empleados.Size = new System.Drawing.Size(638, 301);
             this.dGV_Empleados.TabIndex = 0;
             // 
             // txt_Nombre
@@ -160,20 +161,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(664, 138);
+            this.label3.Location = new System.Drawing.Point(656, 138);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.Size = new System.Drawing.Size(136, 13);
             this.label3.TabIndex = 14;
-            this.label3.Text = "Fecha Ingreso";
+            this.label3.Text = "Fecha Ingreso yyyy/mm/dd";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(679, 177);
+            this.label4.Location = new System.Drawing.Point(656, 177);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(107, 13);
             this.label4.TabIndex = 15;
-            this.label4.Text = "Telefono";
+            this.label4.Text = "Telefono 10 numeros";
             // 
             // label5
             // 
@@ -187,24 +188,24 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(695, 255);
+            this.label6.Location = new System.Drawing.Point(665, 255);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 13);
+            this.label6.Size = new System.Drawing.Size(85, 13);
             this.label6.TabIndex = 17;
-            this.label6.Text = "rfc";
+            this.label6.Text = "rfc 12, 13 digitos";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(666, 294);
+            this.label7.Location = new System.Drawing.Point(656, 294);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 13);
+            this.label7.Size = new System.Drawing.Size(121, 13);
             this.label7.TabIndex = 18;
-            this.label7.Text = "Seguro Social";
+            this.label7.Text = "Seguro Social 11 digitos";
             // 
             // txt_Id_Usuario
             // 
-            this.txt_Id_Usuario.Location = new System.Drawing.Point(656, 348);
+            this.txt_Id_Usuario.Location = new System.Drawing.Point(-4, 435);
             this.txt_Id_Usuario.Name = "txt_Id_Usuario";
             this.txt_Id_Usuario.Size = new System.Drawing.Size(100, 20);
             this.txt_Id_Usuario.TabIndex = 19;
@@ -217,7 +218,7 @@
             this.btn_Exit_Empleados.TabIndex = 20;
             this.btn_Exit_Empleados.Text = "Exit";
             this.btn_Exit_Empleados.UseVisualStyleBackColor = true;
-            this.btn_Exit_Empleados.Click += new System.EventHandler(this.btn_Exit_Empleados_Click_1);
+            this.btn_Exit_Empleados.Click += new System.EventHandler(this.btn_Exit_Empleados_Click);
             // 
             // label8
             // 
@@ -228,11 +229,20 @@
             this.label8.TabIndex = 21;
             this.label8.Text = "Id Usuario";
             // 
+            // combo_Usuario
+            // 
+            this.combo_Usuario.FormattingEnabled = true;
+            this.combo_Usuario.Location = new System.Drawing.Point(656, 357);
+            this.combo_Usuario.Name = "combo_Usuario";
+            this.combo_Usuario.Size = new System.Drawing.Size(121, 21);
+            this.combo_Usuario.TabIndex = 22;
+            // 
             // CP_Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.combo_Usuario);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btn_Exit_Empleados);
             this.Controls.Add(this.txt_Id_Usuario);
@@ -285,5 +295,6 @@
         private System.Windows.Forms.TextBox txt_Id_Usuario;
         private System.Windows.Forms.Button btn_Exit_Empleados;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox combo_Usuario;
     }
 }
