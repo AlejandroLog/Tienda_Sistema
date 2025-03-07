@@ -136,5 +136,14 @@
       <Name>Capa_Negocioo</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\particle-lines-futuristic-gradient-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp9764014-login-page-wallpapers.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp4390828-page-wallpapers.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

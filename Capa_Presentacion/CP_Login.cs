@@ -8,6 +8,7 @@ namespace Capa_Presentacion
     {
         private CN_Usuarios usuarios = new CN_Usuarios();
 
+        // Constructor
         public CP_Login()
         {
             InitializeComponent();
@@ -18,11 +19,14 @@ namespace Capa_Presentacion
         {
         }
 
+        // Evento para el botón de ingresar
         private void btn_Ingresar_Click(object sender, EventArgs e)
         {
             string usuario = txt_Usuario_Login.Text;
             string password = txt_Password_Login.Text;
 
+
+            // Validar usuario
             if (usuarios.ValidarUsuario(usuario, password))
             {
                 MessageBox.Show("¡Login exitoso!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);

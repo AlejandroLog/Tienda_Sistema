@@ -59,5 +59,35 @@ namespace Capa_Presentacion.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap particle_lines_futuristic_gradient_background {
+            get {
+                object obj = ResourceManager.GetObject("particle-lines-futuristic-gradient-background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wp4390828_page_wallpapers {
+            get {
+                object obj = ResourceManager.GetObject("wp4390828-page-wallpapers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wp9764014_login_page_wallpapers {
+            get {
+                object obj = ResourceManager.GetObject("wp9764014-login-page-wallpapers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

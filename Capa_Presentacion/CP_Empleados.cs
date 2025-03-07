@@ -13,10 +13,13 @@ namespace Capa_Presentacion
 {
     public partial class CP_Empleados : Form
     {
+        // Instancias de las clases de negocio
         CN_Empleados empleados = new CN_Empleados();
         CN_Usuarios usuario = new CN_Usuarios();
         private int ID_Empleado = 0;
         private bool Update = false;
+
+        // Constructor
         public CP_Empleados()
         {
             InitializeComponent();
@@ -29,32 +32,38 @@ namespace Capa_Presentacion
 
         }
 
+        // Mostrar Empleados
         private void CP_Empleados_Load(object sender, EventArgs e)
         {
             Mostrar_Empleados();
         }
 
+        // Mostrar Empleados
         private void Mostrar_Empleados()
         {
             CN_Empleados empleado = new CN_Empleados();
             dGV_Empleados.DataSource = empleado.MostrarEmpleados();
         }
 
+        // Llenar combo de usuarios
         private void Llenar_Combo()
         {
             combo_Usuario.DataSource = usuario.MostrarUsuarios();
             combo_Usuario.DisplayMember = "usuario";
             combo_Usuario.ValueMember = "Id_Usuarios";
                 }
+
+        // Agregar Empleado
         private void btn_Agregar_Empleado_Click(object sender, EventArgs e)
         {
             if (Update == false)
             {
                 try
                 {
-                    // Verificar si algún campo está vacío
+                    // campos vacios
                     var camposVacios = new List<string>();
 
+                    // Validar campos vacíos
                     if (string.IsNullOrEmpty(txt_Nombre.Text)) camposVacios.Add("Nombre");
                     if (string.IsNullOrEmpty(txt_Apellido.Text)) camposVacios.Add("Apellido");
                     if (string.IsNullOrEmpty(txt_Domicilio.Text)) camposVacios.Add("Domicilio");
@@ -63,9 +72,18 @@ namespace Capa_Presentacion
                     if (string.IsNullOrEmpty(txt_Seguro_Social.Text)) camposVacios.Add("Seguro Social");
                     if (string.IsNullOrEmpty(txt_Telefono.Text)) camposVacios.Add("Teléfono");
 
+                    // validación de campos vacíos
                     if (camposVacios.Count > 0)
                     {
                         MessageBox.Show($"Los siguientes campos son obligatorios:\n{string.Join(", ", camposVacios)}");
+                        return;
+                    }
+
+
+                    if (!txt_Nombre.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)) ||
+                       !txt_Apellido.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
+                    {
+                        MessageBox.Show("El nombre y apellido solo pueden contener letras.");
                         return;
                     }
 
@@ -75,12 +93,15 @@ namespace Capa_Presentacion
                         MessageBox.Show("La fecha ingresada no es válida.");
                         return;
                     }
+
+                    // Validar fecha de ingreso
                     if (fecha_Ing == DateTime.MinValue)
                     {
                         MessageBox.Show("La fecha ingresada no es válida.");
                         return;
                     }
 
+                    // Validar ID de usuario
                     int idUsuario = Convert.ToInt32(combo_Usuario.SelectedValue);
 
                     // Validar Teléfono (solo 10 dígitos numéricos)
@@ -117,12 +138,14 @@ namespace Capa_Presentacion
                         idUsuario
                     );
 
+                    // Mensaje de éxito
                     MessageBox.Show("El usuario se agregó correctamente.");
                     Mostrar_Empleados();
                     Limpiar();
                 }
                 catch (Exception ex)
                 {
+                    // Mensaje de error
                     MessageBox.Show($"No se pudo agregar el empleado: {ex.Message}");
                 }
             }
@@ -131,6 +154,23 @@ namespace Capa_Presentacion
             {
                 try
                 {
+                    var camposVacios = new List<string>();
+
+                    // Validar campos vacíos
+                    if (string.IsNullOrEmpty(txt_Nombre.Text)) camposVacios.Add("Nombre");
+                    if (string.IsNullOrEmpty(txt_Apellido.Text)) camposVacios.Add("Apellido");
+                    if (string.IsNullOrEmpty(txt_Domicilio.Text)) camposVacios.Add("Domicilio");
+                    if (string.IsNullOrEmpty(txt_Fecha_Ing.Text)) camposVacios.Add("Fecha de Ingreso");
+                    if (string.IsNullOrEmpty(txt_Rfc.Text)) camposVacios.Add("RFC");
+                    if (string.IsNullOrEmpty(txt_Seguro_Social.Text)) camposVacios.Add("Seguro Social");
+                    if (string.IsNullOrEmpty(txt_Telefono.Text)) camposVacios.Add("Teléfono");
+
+                    if (!txt_Nombre.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)) ||
+                       !txt_Apellido.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
+                    {
+                        MessageBox.Show("El nombre y apellido solo pueden contener letras.");
+                        return;
+                    }
                     // Validar y convertir datos para actualizar
                     if (!DateTime.TryParse(txt_Fecha_Ing.Text, out DateTime fecha_Ing))
                     {
@@ -175,24 +215,28 @@ namespace Capa_Presentacion
                         idUsuario
                     );
 
+                    // Mensaje de éxito
                     MessageBox.Show("El Empleado se actualizó correctamente.");
                     Mostrar_Empleados();
                     Limpiar();
-                    Update = false; // Regresa a modo agregar
+                    Update = false;
                 }
                 catch (Exception ex)
                 {
+                    // Mensaje de error
                     MessageBox.Show("No se pudo actualizar el empleado: " + ex.Message);
                 }
             }
         }
 
 
-
+        // Actualizar Empleado
         private void btn_Actualizar_Empleado_Click(object sender, EventArgs e)
         {
+            // Validar que haya una fila seleccionada
             if (dGV_Empleados.SelectedRows.Count > 0)
             {
+                // Llenar los campos con los datos de la fila seleccionada
                 Update = true;
                 txt_Nombre.Text = dGV_Empleados.CurrentRow.Cells["nombre"].Value.ToString();
                 txt_Apellido.Text = dGV_Empleados.CurrentRow.Cells["apellido"].Value.ToString();
@@ -208,11 +252,12 @@ namespace Capa_Presentacion
             }
             else
             {
+                // Mensaje de error
                 MessageBox.Show("Selecciona una fila, por favor");
             }
         }
 
-
+        // Limpiar campos
         private void Limpiar()
         {
             txt_Nombre.Clear();
@@ -225,10 +270,13 @@ namespace Capa_Presentacion
             txt_Id_Usuario.Clear();
         }
 
+        // Eliminar Empleado
         private void btn_Eliminar_Empleado_Click(object sender, EventArgs e)
         {
+            // Validar que haya una fila seleccionada
             if (dGV_Empleados.SelectedRows.Count > 0)
             {
+                // Asigna el ID del empleado para la eliminación
                 ID_Empleado = Convert.ToInt32(dGV_Empleados.CurrentRow.Cells["Id_Empleados"].Value);
                 empleados.Delete_Empleado(false, ID_Empleado);
                 MessageBox.Show("El Empleado se eliminó correctamente");
@@ -236,15 +284,17 @@ namespace Capa_Presentacion
             }
             else
             {
+                // Mensaje de error
                 MessageBox.Show("Selecciona una fila, por favor");
             }
         }
 
+        // Salir de la ventana
         private void btn_Exit_Empleados_Click(object sender, EventArgs e)
         {
             this.Hide();
 
-            // Abrir la ventana principal (cambia CP_Usuarios por el formulario que quieras abrir)
+            // Abrir la ventana menu
             CP_Menu formularioPrincipal = new CP_Menu();
             formularioPrincipal.ShowDialog();
 

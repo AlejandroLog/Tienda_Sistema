@@ -33,11 +33,12 @@
             this.btn_GoProveedores = new System.Windows.Forms.Button();
             this.btn_GoProductos = new System.Windows.Forms.Button();
             this.btn_Exit_Menu = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_GoUsuarios
             // 
-            this.btn_GoUsuarios.Location = new System.Drawing.Point(355, 87);
+            this.btn_GoUsuarios.Location = new System.Drawing.Point(355, 123);
             this.btn_GoUsuarios.Name = "btn_GoUsuarios";
             this.btn_GoUsuarios.Size = new System.Drawing.Size(75, 23);
             this.btn_GoUsuarios.TabIndex = 0;
@@ -47,7 +48,7 @@
             // 
             // btn_GoEmpleados
             // 
-            this.btn_GoEmpleados.Location = new System.Drawing.Point(355, 147);
+            this.btn_GoEmpleados.Location = new System.Drawing.Point(355, 175);
             this.btn_GoEmpleados.Name = "btn_GoEmpleados";
             this.btn_GoEmpleados.Size = new System.Drawing.Size(75, 23);
             this.btn_GoEmpleados.TabIndex = 1;
@@ -57,7 +58,7 @@
             // 
             // btn_GoProveedores
             // 
-            this.btn_GoProveedores.Location = new System.Drawing.Point(355, 205);
+            this.btn_GoProveedores.Location = new System.Drawing.Point(355, 226);
             this.btn_GoProveedores.Name = "btn_GoProveedores";
             this.btn_GoProveedores.Size = new System.Drawing.Size(75, 23);
             this.btn_GoProveedores.TabIndex = 2;
@@ -67,7 +68,7 @@
             // 
             // btn_GoProductos
             // 
-            this.btn_GoProductos.Location = new System.Drawing.Point(355, 258);
+            this.btn_GoProductos.Location = new System.Drawing.Point(355, 276);
             this.btn_GoProductos.Name = "btn_GoProductos";
             this.btn_GoProductos.Size = new System.Drawing.Size(75, 23);
             this.btn_GoProductos.TabIndex = 3;
@@ -85,11 +86,23 @@
             this.btn_Exit_Menu.UseVisualStyleBackColor = true;
             this.btn_Exit_Menu.Click += new System.EventHandler(this.btn_Exit_Menu_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MV Boli", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(262, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(274, 46);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Menu Principal";
+            // 
             // CP_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Capa_Presentacion.Properties.Resources.wp4390828_page_wallpapers;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Exit_Menu);
             this.Controls.Add(this.btn_GoProductos);
             this.Controls.Add(this.btn_GoProveedores);
@@ -98,6 +111,7 @@
             this.Name = "CP_Menu";
             this.Text = "CP_Menu";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -108,5 +122,6 @@
         private System.Windows.Forms.Button btn_GoProveedores;
         private System.Windows.Forms.Button btn_GoProductos;
         private System.Windows.Forms.Button btn_Exit_Menu;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -39,7 +39,7 @@
             // 
             // txt_Usuario_Login
             // 
-            this.txt_Usuario_Login.Location = new System.Drawing.Point(318, 116);
+            this.txt_Usuario_Login.Location = new System.Drawing.Point(318, 173);
             this.txt_Usuario_Login.Name = "txt_Usuario_Login";
             this.txt_Usuario_Login.Size = new System.Drawing.Size(100, 20);
             this.txt_Usuario_Login.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             // txt_Password_Login
             // 
-            this.txt_Password_Login.Location = new System.Drawing.Point(318, 174);
+            this.txt_Password_Login.Location = new System.Drawing.Point(318, 226);
             this.txt_Password_Login.Name = "txt_Password_Login";
             this.txt_Password_Login.Size = new System.Drawing.Size(100, 20);
             this.txt_Password_Login.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // btn_Ingresar
             // 
-            this.btn_Ingresar.Location = new System.Drawing.Point(327, 226);
+            this.btn_Ingresar.Location = new System.Drawing.Point(327, 279);
             this.btn_Ingresar.Name = "btn_Ingresar";
             this.btn_Ingresar.Size = new System.Drawing.Size(75, 23);
             this.btn_Ingresar.TabIndex = 2;
@@ -66,7 +66,7 @@
             // checkBoxPassword
             // 
             this.checkBoxPassword.AutoSize = true;
-            this.checkBoxPassword.Location = new System.Drawing.Point(411, 177);
+            this.checkBoxPassword.Location = new System.Drawing.Point(413, 229);
             this.checkBoxPassword.Name = "checkBoxPassword";
             this.checkBoxPassword.Size = new System.Drawing.Size(98, 17);
             this.checkBoxPassword.TabIndex = 4;
@@ -78,7 +78,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(346, 100);
+            this.label1.Location = new System.Drawing.Point(346, 139);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 5;
@@ -88,7 +88,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(341, 158);
+            this.label2.Location = new System.Drawing.Point(341, 210);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 6;
@@ -97,9 +97,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(346, 62);
+            this.label3.Font = new System.Drawing.Font("Segoe Print", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(307, 54);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.Size = new System.Drawing.Size(122, 62);
             this.label3.TabIndex = 73;
             this.label3.Text = "Login";
             // 
@@ -107,6 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Capa_Presentacion.Properties.Resources.wp9764014_login_page_wallpapers;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

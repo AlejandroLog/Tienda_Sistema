@@ -12,20 +12,24 @@ namespace Capa_Presentacion
 {
     public partial class CP_Menu : Form
     {
+
+        // Constructor
         public CP_Menu()
         {
             InitializeComponent();
         }
 
+
+        // Eventos para los botones de la barra de navegación
         private void btn_GoUsuarios_Click(object sender, EventArgs e)
         {
             this.Hide();
 
-            // Abrir la ventana principal (cambia CP_Usuarios por el formulario que quieras abrir)
+            // Abrir la ventana usuarios
             CP_Usuarios formularioPrincipal = new CP_Usuarios();
             formularioPrincipal.ShowDialog();
 
-            // Cerrar la ventana de login cuando se cierre la principal
+            // Cerrar la ventana
             this.Close();
         }
 
@@ -33,11 +37,11 @@ namespace Capa_Presentacion
         {
             this.Hide();
 
-            // Abrir la ventana principal (cambia CP_Usuarios por el formulario que quieras abrir)
+            // Abrir la ventana empleados
             CP_Empleados formularioPrincipal = new CP_Empleados();
             formularioPrincipal.ShowDialog();
 
-            // Cerrar la ventana de login cuando se cierre la principal
+            // Cerrar la ventana
             this.Close();
         }
 
@@ -45,11 +49,11 @@ namespace Capa_Presentacion
         {
             this.Hide();
 
-            // Abrir la ventana principal (cambia CP_Usuarios por el formulario que quieras abrir)
+            // Abrir productos
             CP_Productos formularioPrincipal = new CP_Productos();
             formularioPrincipal.ShowDialog();
 
-            // Cerrar la ventana de login cuando se cierre la principal
+            // Cerrar la ventana
             this.Close();
         }
 
@@ -57,11 +61,11 @@ namespace Capa_Presentacion
         {
             this.Hide();
 
-            // Abrir la ventana principal (cambia CP_Usuarios por el formulario que quieras abrir)
+            // Abrir proveedores
             CP_Proveedores formularioPrincipal = new CP_Proveedores();
             formularioPrincipal.ShowDialog();
 
-            // Cerrar la ventana de login cuando se cierre la principal
+            // Cerrar la ventana
             this.Close();
         }
 
@@ -69,11 +73,11 @@ namespace Capa_Presentacion
         {
             this.Hide();
 
-            // Abrir la ventana principal (cambia CP_Usuarios por el formulario que quieras abrir)
+            // Salir al login
             CP_Login formularioPrincipal = new CP_Login();
             formularioPrincipal.ShowDialog();
 
-            // Cerrar la ventana de login cuando se cierre la principal
+            // Cerrar la ventana
             this.Close();
         }
     }

@@ -62,7 +62,7 @@ namespace Capa_Datoss
             comando.Parameters.AddWithValue("@seguro_Social", seguro_Social);
             comando.Parameters.AddWithValue("@status", status);
             comando.Parameters.AddWithValue("@Id_Empleado", Id_Empleado);
-            comando.Parameters.AddWithValue("@Id_Usuario", Id_Usuario);  // ¡Este faltaba!
+            comando.Parameters.AddWithValue("@Id_Usuario", Id_Usuario);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conection.CerrarConexion();

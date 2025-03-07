@@ -10,11 +10,13 @@ namespace Capa_Datos
 {
     public class CD_Usuarios
     {
+        // Instancia de la clase CD_Connection
         private CD_Connection conection = new CD_Connection();
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
+        // Mostrar en la tabla
         public DataTable MostrarUsuarios()
         {
             comando.Connection = conection.AbrirConexion();

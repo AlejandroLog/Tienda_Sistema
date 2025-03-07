@@ -10,10 +10,11 @@ namespace Capa_Negocioo
     public class CN_Empleados
     {
 
-        // ✅ Correcto, referencia a la capa de datos
+        // referencia a capa datos
 
         private CD_Empleados empleados = new CD_Empleados();
 
+        // metodo para mostrar empleados
         public DataTable MostrarEmpleados()
         {
             DataTable tabla = new DataTable();
