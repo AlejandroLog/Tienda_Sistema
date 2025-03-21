@@ -63,6 +63,16 @@ namespace Capa_Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap carritoCompras {
+            get {
+                object obj = ResourceManager.GetObject("carritoCompras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap particle_lines_futuristic_gradient_background {
             get {
                 object obj = ResourceManager.GetObject("particle-lines-futuristic-gradient-background", resourceCulture);

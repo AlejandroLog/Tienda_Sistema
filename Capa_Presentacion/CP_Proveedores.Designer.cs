@@ -132,12 +132,13 @@
             // 
             // btn_Exit_Proveedor
             // 
+            this.btn_Exit_Proveedor.BackColor = System.Drawing.Color.Red;
             this.btn_Exit_Proveedor.Location = new System.Drawing.Point(31, 399);
             this.btn_Exit_Proveedor.Name = "btn_Exit_Proveedor";
             this.btn_Exit_Proveedor.Size = new System.Drawing.Size(75, 23);
             this.btn_Exit_Proveedor.TabIndex = 10;
             this.btn_Exit_Proveedor.Text = "Exit";
-            this.btn_Exit_Proveedor.UseVisualStyleBackColor = true;
+            this.btn_Exit_Proveedor.UseVisualStyleBackColor = false;
             this.btn_Exit_Proveedor.Click += new System.EventHandler(this.btn_Exit_Proveedor_Click);
             // 
             // Nombre

@@ -55,7 +55,6 @@ namespace Capa_Presentacion
                 {
                     // Validar campos vacíos
                     var camposVacios = new List<string>();
-
                     if (string.IsNullOrEmpty(txt_Nombre_Proveedor.Text)) camposVacios.Add("Nombre");
                     if (string.IsNullOrEmpty(txt_Apellido_Proveedor.Text)) camposVacios.Add("Apellido");
                     if (string.IsNullOrEmpty(txt_Empresa_Proveedor.Text)) camposVacios.Add("Empresa");

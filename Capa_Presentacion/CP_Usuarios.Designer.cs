@@ -31,7 +31,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Exit_Usuarios = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Usuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dGV_Usuarios
@@ -107,12 +109,13 @@
             // 
             // btn_Exit_Usuarios
             // 
+            this.btn_Exit_Usuarios.BackColor = System.Drawing.Color.Red;
             this.btn_Exit_Usuarios.Location = new System.Drawing.Point(27, 342);
             this.btn_Exit_Usuarios.Name = "btn_Exit_Usuarios";
             this.btn_Exit_Usuarios.Size = new System.Drawing.Size(100, 30);
             this.btn_Exit_Usuarios.TabIndex = 8;
             this.btn_Exit_Usuarios.Text = "Exit";
-            this.btn_Exit_Usuarios.UseVisualStyleBackColor = true;
+            this.btn_Exit_Usuarios.UseVisualStyleBackColor = false;
             this.btn_Exit_Usuarios.Click += new System.EventHandler(this.btn_Exit_Usuarios_Click);
             // 
             // label3
@@ -125,12 +128,21 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Usuarios";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(312, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(8, 8);
+            this.dataGridView1.TabIndex = 10;
+            // 
             // CP_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Capa_Presentacion.Properties.Resources.wp9764014_login_page_wallpapers;
             this.ClientSize = new System.Drawing.Size(700, 408);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_Exit_Usuarios);
             this.Controls.Add(this.label2);
@@ -145,6 +157,7 @@
             this.Text = "Gestión de Usuarios";
             this.Load += new System.EventHandler(this.CP_Usuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Usuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,5 +167,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_Exit_Usuarios;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

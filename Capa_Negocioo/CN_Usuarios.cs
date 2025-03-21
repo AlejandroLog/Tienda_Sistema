@@ -47,5 +47,12 @@ namespace Capa_Negocioo
             return usuarios.ValidarUsuario(usuario, password);
         }
 
+        private CD_Usuarios datosUsuarios = new CD_Usuarios();
+
+        public int ObtenerIdEmpleado(string usuario, string password)
+        {
+            return datosUsuarios.ObtenerIdEmpleado(usuario, password);
+        }
+
     }
 }

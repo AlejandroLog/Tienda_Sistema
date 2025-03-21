@@ -51,7 +51,7 @@ namespace Capa_Presentacion
             combo_Usuario.DataSource = usuario.MostrarUsuarios();
             combo_Usuario.DisplayMember = "usuario";
             combo_Usuario.ValueMember = "Id_Usuarios";
-                }
+        }
 
         // Agregar Empleado
         private void btn_Agregar_Empleado_Click(object sender, EventArgs e)

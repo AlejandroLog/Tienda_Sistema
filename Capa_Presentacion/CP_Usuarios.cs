@@ -50,12 +50,7 @@ namespace Capa_Presentacion
                         MessageBox.Show("Los campos son obligatorios, por favor");
                         return;
                     }
-                    // Validar si el usuario y la contraseña solo contienen letras
-                    if (!txt_Usuario.Text.All(char.IsLetter))
-                    {
-                        MessageBox.Show("El usuario y la contraseña solo pueden contener letras.");
-                        return;
-                    }
+                   
                     // Validar contraseña
                     if (txt_Password.Text.Length < 6)
                     {
@@ -87,12 +82,7 @@ namespace Capa_Presentacion
                         MessageBox.Show("Los campos son obligatorios, por favor");
                         return;
                     }
-                    // Validar si el usuario y la contraseña solo contienen letras
-                    if (!txt_Usuario.Text.All(char.IsLetter))
-                    {
-                        MessageBox.Show("El usuario y la contraseña solo pueden contener letras.");
-                        return;
-                    }
+                  
                     // Validar tamaño de contraseña
                     if (txt_Password.Text.Length < 6)
                     {

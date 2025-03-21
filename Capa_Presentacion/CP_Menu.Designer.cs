@@ -34,6 +34,7 @@
             this.btn_GoProductos = new System.Windows.Forms.Button();
             this.btn_Exit_Menu = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_Realizar_Compra = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_GoUsuarios
@@ -78,12 +79,13 @@
             // 
             // btn_Exit_Menu
             // 
+            this.btn_Exit_Menu.BackColor = System.Drawing.Color.Red;
             this.btn_Exit_Menu.Location = new System.Drawing.Point(355, 360);
             this.btn_Exit_Menu.Name = "btn_Exit_Menu";
             this.btn_Exit_Menu.Size = new System.Drawing.Size(75, 23);
             this.btn_Exit_Menu.TabIndex = 4;
             this.btn_Exit_Menu.Text = "Exit";
-            this.btn_Exit_Menu.UseVisualStyleBackColor = true;
+            this.btn_Exit_Menu.UseVisualStyleBackColor = false;
             this.btn_Exit_Menu.Click += new System.EventHandler(this.btn_Exit_Menu_Click);
             // 
             // label1
@@ -96,12 +98,23 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Menu Principal";
             // 
+            // btn_Realizar_Compra
+            // 
+            this.btn_Realizar_Compra.Location = new System.Drawing.Point(355, 320);
+            this.btn_Realizar_Compra.Name = "btn_Realizar_Compra";
+            this.btn_Realizar_Compra.Size = new System.Drawing.Size(75, 23);
+            this.btn_Realizar_Compra.TabIndex = 7;
+            this.btn_Realizar_Compra.Text = "Comprar";
+            this.btn_Realizar_Compra.UseVisualStyleBackColor = true;
+            this.btn_Realizar_Compra.Click += new System.EventHandler(this.btn_Realizar_Compra_Click);
+            // 
             // CP_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Capa_Presentacion.Properties.Resources.wp4390828_page_wallpapers;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_Realizar_Compra);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Exit_Menu);
             this.Controls.Add(this.btn_GoProductos);
@@ -123,5 +136,6 @@
         private System.Windows.Forms.Button btn_GoProductos;
         private System.Windows.Forms.Button btn_Exit_Menu;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_Realizar_Compra;
     }
 }

@@ -80,5 +80,17 @@ namespace Capa_Presentacion
             // Cerrar la ventana
             this.Close();
         }
+
+        private void btn_Realizar_Compra_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            // Salir al login
+            CP_Ventas formularioPrincipal = new CP_Ventas();
+            formularioPrincipal.ShowDialog();
+
+            // Cerrar la ventana
+            this.Close();
+        }
     }
 }

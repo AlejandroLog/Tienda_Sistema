@@ -54,11 +54,8 @@ namespace Capa_Presentacion
                 try
                 {
                     // Validar campos vacíos
-                    if (string.IsNullOrEmpty(txt_Nombre_Producto.Text) ||
-                        string.IsNullOrEmpty(txt_Descripcion_Producto.Text) ||
-                        string.IsNullOrEmpty(txt_Precio_Producto.Text) ||
-                        string.IsNullOrEmpty(txt_Costo_Producto.Text) ||
-                        string.IsNullOrEmpty(txt_Categoria_Producto.Text))
+                    if (string.IsNullOrEmpty(txt_Nombre_Producto.Text) || string.IsNullOrEmpty(txt_Descripcion_Producto.Text) || string.IsNullOrEmpty(txt_Precio_Producto.Text) ||
+                        string.IsNullOrEmpty(txt_Costo_Producto.Text) || string.IsNullOrEmpty(txt_Categoria_Producto.Text))
                     {
                         MessageBox.Show("Los campos son obligatorios, por favor");
                         return;
@@ -79,6 +76,12 @@ namespace Capa_Presentacion
                     if (!decimal.TryParse(txt_Costo_Producto.Text.Replace(',', '.'), NumberStyles.AllowDecimalPoint, culture, out costo) || costo <= 0)
                     {
                         MessageBox.Show("Ingrese un valor numérico válido y positivo para el costo.");
+                        return;
+                    }
+
+                    if (precio <= costo)
+                    {
+                        MessageBox.Show("el precio no puede ser menor que costo.");
                         return;
                     }
 
@@ -124,18 +127,27 @@ namespace Capa_Presentacion
                     CultureInfo culture = CultureInfo.InvariantCulture;
                     decimal precio, costo;
 
+
                     // Validar precio y . ,
                     if (!decimal.TryParse(txt_Precio_Producto.Text.Replace(',', '.'), NumberStyles.AllowDecimalPoint, culture, out precio) || precio <= 0)
                     {
                         MessageBox.Show("Ingrese un valor numérico válido y positivo para el precio.");
                         return;
                     }
+                   
 
                     // Validar costo y . ,
                     if (!decimal.TryParse(txt_Costo_Producto.Text.Replace(',', '.'), NumberStyles.AllowDecimalPoint, culture, out costo) || costo <= 0)
                     {
                         MessageBox.Show("Ingrese un valor numérico válido y positivo para el costo.");
                         return;
+                    }
+
+                    if (precio <= costo)
+                    {
+                        MessageBox.Show("no puedes ser menor el presio del costo");
+                        return;
+
                     }
 
                     // Actualizar producto

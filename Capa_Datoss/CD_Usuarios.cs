@@ -87,5 +87,26 @@ namespace Capa_Datos
 
             return esValido;
         }
+
+        public int ObtenerIdEmpleado(string usuario, string password)
+        {
+            int idEmpleado = -1;
+            using (SqlConnection conexion = conection.AbrirConexion())
+            {
+                SqlCommand comando = new SqlCommand("ValidarUsuario", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@usuario", usuario);
+                comando.Parameters.AddWithValue("@password", password);
+
+                SqlDataReader reader = comando.ExecuteReader();
+                if (reader.Read())
+                {
+                    idEmpleado = reader.GetInt32(1); // Índice 1 porque en el SP primero se devuelve Id_Usuarios
+                }
+                reader.Close();
+            }
+            return idEmpleado;
+        }
+
     }
 }

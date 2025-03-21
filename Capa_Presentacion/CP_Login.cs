@@ -20,25 +20,22 @@ namespace Capa_Presentacion
         }
 
         // Evento para el botón de ingresar
+        public static int IdEmpleadoSesion { get; private set; } // Variable global para la sesión
+
         private void btn_Ingresar_Click(object sender, EventArgs e)
         {
             string usuario = txt_Usuario_Login.Text;
             string password = txt_Password_Login.Text;
 
-
-            // Validar usuario
             if (usuarios.ValidarUsuario(usuario, password))
             {
+                IdEmpleadoSesion = usuarios.ObtenerIdEmpleado(usuario, password); // Guardar Id_Empleado
+
                 MessageBox.Show("¡Login exitoso!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Ocultar la ventana de login
                 this.Hide();
-
-                // Abrir la ventana principal
                 CP_Menu formularioPrincipal = new CP_Menu();
                 formularioPrincipal.ShowDialog();
-
-                // Cerrar la ventana de login cuando se cierre la principal
                 this.Close();
             }
             else
@@ -78,5 +75,16 @@ namespace Capa_Presentacion
         {
 
         }
+
+        private void btn_Finalizar_Programa_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Está seguro de que desea salir?", "Confirmar salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
     }
 }

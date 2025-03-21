@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_Finalizar_Programa = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_Usuario_Login
@@ -104,12 +105,24 @@
             this.label3.TabIndex = 73;
             this.label3.Text = "Login";
             // 
+            // btn_Finalizar_Programa
+            // 
+            this.btn_Finalizar_Programa.BackColor = System.Drawing.Color.Red;
+            this.btn_Finalizar_Programa.Location = new System.Drawing.Point(327, 362);
+            this.btn_Finalizar_Programa.Name = "btn_Finalizar_Programa";
+            this.btn_Finalizar_Programa.Size = new System.Drawing.Size(75, 23);
+            this.btn_Finalizar_Programa.TabIndex = 74;
+            this.btn_Finalizar_Programa.Text = "Salir";
+            this.btn_Finalizar_Programa.UseVisualStyleBackColor = false;
+            this.btn_Finalizar_Programa.Click += new System.EventHandler(this.btn_Finalizar_Programa_Click);
+            // 
             // CP_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Capa_Presentacion.Properties.Resources.wp9764014_login_page_wallpapers;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_Finalizar_Programa);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -133,5 +146,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_Finalizar_Programa;
     }
 }
