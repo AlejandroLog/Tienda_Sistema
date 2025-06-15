@@ -7,4 +7,5 @@
 
 ![Productos](https://github.com/AlejandroLog/Tienda_Sistema/blob/9a3e376eb1755d9f5e77ef54f854c63af97b25ee/empleadosC%23.png)
 
+![Productos](https://github.com/AlejandroLog/Tienda_Sistema/blob/473443a6921ee59ef6fdb743c1ed5af63551d883/compraC%23.png)
 
